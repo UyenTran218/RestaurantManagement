@@ -10,45 +10,45 @@ namespace RM_API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ItemController : ControllerBase
+    public class RoleController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public ItemController(ApplicationDbContext context)
+        public RoleController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         /// <summary>
-        /// Get Item List
+        /// Get Role List
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Role List</returns>
         [HttpGet]
-        public IEnumerable<Item> Get()
+        public IEnumerable<Role> Get()
         {
-            return _context.Item.ToList();
+            return _context.Role.ToList();
         }
 
         /// <summary>
-        /// Get Item by Id
+        /// Get Role by Id
         /// </summary>
-        /// <returns>Item by Id</returns>
-        /// <param name="Id">Item Id</param>
+        /// <returns>Role by Id</returns>
+        /// <param name="Id">Role Id</param>
         [HttpGet("Id")]
-        public Item Get([FromQuery] int Id)
+        public Role Get([FromQuery] int Id)
         {
-            return _context.Item.Where(item => item.Id == Id).FirstOrDefault();
+            return _context.Role.Where(role => role.Id == Id).FirstOrDefault();
         }
 
         /// <summary>
-        /// Create New Item
+        /// Create New Role
         /// </summary>
-        /// <returns>Item</returns>
+        /// <returns>Role</returns>
         [HttpPost]
-        public Item Posts([FromQuery] Item Item)
+        public Role Posts([FromQuery] Role Role)
         {
-            _context.Item.Add(Item);
+            _context.Role.Add(Role);
             _context.SaveChanges();
-            return Item;
+            return Role;
         }
     }
 }
