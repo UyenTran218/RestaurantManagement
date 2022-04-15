@@ -32,7 +32,7 @@ namespace RM_API.Controllers
         /// Get Role by Id
         /// </summary>
         /// <returns>Role by Id</returns>
-        /// <param name="Id">Role Id</param>
+        /// <param name="Id">Parameter is Role Id</param>
         [HttpGet("Id")]
         public Role Get([FromQuery] int Id)
         {
@@ -40,7 +40,7 @@ namespace RM_API.Controllers
         }
 
         /// <summary>
-        /// Create New Role
+        /// Add New Role
         /// </summary>
         /// <returns>Role</returns>
         [HttpPost]

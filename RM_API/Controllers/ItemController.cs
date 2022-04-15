@@ -40,7 +40,7 @@ namespace RM_API.Controllers
         }
 
         /// <summary>
-        /// Create New Item
+        /// Add New Item
         /// </summary>
         /// <returns>Item</returns>
         [HttpPost]
